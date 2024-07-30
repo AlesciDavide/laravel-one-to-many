@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Types;
+use App\Models\type;
 
 
 class TypesSeeder extends Seeder
@@ -30,7 +30,7 @@ class TypesSeeder extends Seeder
     ];
 
     foreach ($typeOfProject as $singleType) {
-        $newType = new Types();
+        $newType = new type();
         $newType->nome = $singleType["nome"];
         $newType->colore = $singleType["colore"];
         $newType->save();

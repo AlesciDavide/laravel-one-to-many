@@ -32,6 +32,7 @@
                         <th scope="row">{{ $singleproject->id}}</th>
                         <td>{{ $singleproject->nome}}</td>
                         <td>{{ $singleproject->linguaggio_utilizzato}}</td>
+                            <td>{{ $singleproject->type->nome}}</td>
                         <td><a href=" {{ $singleproject->url_repo}}">Clicca qui per vedere la repository</a></td>
                         <td>
                             <div class="d-flex ">

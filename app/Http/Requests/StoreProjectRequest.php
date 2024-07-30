@@ -24,7 +24,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'nome' => ['required', 'min:2', 'max:254'],
             'linguaggio_utilizzato' => ['required', 'min:1', 'max:254'],
-            'url_repo' => ['url', 'nullable'],
+            'url_repo' => ['url'],
+            'type_id' => ['required', 'exists:types,id'],
         ];
     }
     /* messaggi di errore */

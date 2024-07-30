@@ -3,7 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-
         @if (session('message_nuovo_progetto'))
             <div class="alert alert-success">
                 {{ session('message_nuovo_progetto') }}
@@ -21,6 +20,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nome Progetto</th>
                         <th scope="col">Linguaggio Utilizzato</th>
+                        <th scope="col">Tipo di progetto</th>
                         <th scope="col">link della repository</th>
                         <th scope="col">Azioni</th>
                     </tr>
@@ -32,6 +32,7 @@
                         <th scope="row">{{ $project->id}}</th>
                         <td>{{ $project->nome}}</td>
                         <td>{{ $project->linguaggio_utilizzato}}</td>
+                        <td>{{ $project->type->nome}}</td>
                         <td><a href=" {{ $project->url_repo}}">Clicca qui per vedere la repository</a></td>
                         <td>
                             <div class="d-flex ">

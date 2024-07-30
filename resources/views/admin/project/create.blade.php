@@ -26,6 +26,16 @@
                     <label for="linguaggio_utilizzato">linguaggio_utilizzato</label>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="linguaggio_utilizzato" id="linguaggio_utilizzato" name="linguaggio_utilizzato" value="{{ old('linguaggio_utilizzato') }}">
 
+                    <label for="type_id">Tipo di progetto</label>
+
+                    <select class="form-select form-select-sm" aria-label="Tipo di progetto" id="type_id" name="type_id">
+                        @foreach ($types as $type)
+
+                        <option value="{{$type->id}}">{{$type->nome}}</option>
+                        @endforeach
+                    </select>
+
+
                     <label for="url_repo">url_repo</label>
                     <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="url_repo" id="url_repo" name="url_repo" value="{{ old('url_repo') }}">
 

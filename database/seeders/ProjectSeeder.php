@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
-use App\Models\Types;
+use App\Models\Type;
 use Faker\Generator as Faker;
 
 class ProjectSeeder extends Seeder
@@ -173,7 +173,7 @@ class ProjectSeeder extends Seeder
             ],
 
         ];
-        $types = Types::all()->pluck("id");
+        $types = type::all()->pluck("id");
         foreach ($projectList as $singleProject) {
             $newProject = new Project();
             $newProject->type_id = $faker->randomElement($types);
