@@ -5,13 +5,15 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Project;
+use App\Models\Types;
+use Faker\Generator as Faker;
 
 class ProjectSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
         $projectList = [
             [
@@ -171,9 +173,10 @@ class ProjectSeeder extends Seeder
             ],
 
         ];
-
+        $types = Types::all()->pluck("id");
         foreach ($projectList as $singleProject) {
             $newProject = new Project();
+            $newProject->type_id = $faker->randomElement($types);
             $newProject->nome = $singleProject["nome"];
             $newProject->linguaggio_utilizzato = $singleProject["linguaggio_utilizzato"];
             $newProject->url_repo = $singleProject["url_repo"];
