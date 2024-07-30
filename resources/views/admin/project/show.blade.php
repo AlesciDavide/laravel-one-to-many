@@ -32,7 +32,12 @@
                         <th scope="row">{{ $project->id}}</th>
                         <td>{{ $project->nome}}</td>
                         <td>{{ $project->linguaggio_utilizzato}}</td>
+                        @if ($project->type->nome == null)
+                            <td>Tipo di progetto non presente</td>
+                        @else
                         <td>{{ $project->type->nome}}</td>
+
+                        @endif
                         <td><a href=" {{ $project->url_repo}}">Clicca qui per vedere la repository</a></td>
                         <td>
                             <div class="d-flex ">
